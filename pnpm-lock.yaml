@@ -24,6 +24,7 @@ specifiers:
   prettier-plugin-tailwindcss: 0.1.13
   react: 18.2.0
   react-dom: 18.2.0
+  react-router-dom: ^6.3.0
   styled-components: ^5.3.5
   terser: ^5.14.2
   typescript: 4.7.4
@@ -34,9 +35,9 @@ specifiers:
 dependencies:
   '@mui/material': 5.9.3_bb2bxwco6ptpubzwpazr52qf6i
   '@mui/styled-engine-sc': 5.9.3_iuerkafropdnyslhga2zpn3if4
-  '@types/styled-components': 5.1.25
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
   styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
 
 devDependencies:
@@ -44,6 +45,7 @@ devDependencies:
   '@commitlint/cli': 17.0.3
   '@types/react': 18.0.15
   '@types/react-dom': 18.0.6
+  '@types/styled-components': 5.1.25
   '@typescript-eslint/eslint-plugin': 5.31.0_jnss7dz76sznncvpyatba5hbxa
   '@typescript-eslint/parser': 5.31.0_qugx7qdu5zevzvxaiqyxfiwquq
   '@vitejs/plugin-legacy': 2.0.0_terser@5.14.2+vite@3.0.4
@@ -965,7 +967,6 @@ packages:
     dependencies:
       '@types/react': 18.0.15
       hoist-non-react-statics: 3.3.2
-    dev: false
 
   /@types/json-schema/7.0.9:
     resolution: {integrity: sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==}
@@ -1032,7 +1033,6 @@ packages:
       '@types/hoist-non-react-statics': 3.3.1
       '@types/react': 18.0.15
       csstype: 3.1.0
-    dev: false
 
   /@typescript-eslint/eslint-plugin/5.31.0_jnss7dz76sznncvpyatba5hbxa:
     resolution: {integrity: sha512-VKW4JPHzG5yhYQrQ1AzXgVgX8ZAJEvCz0QI6mLRX4tf7rnFfh5D8SKm0Pq6w5PyNfAWJk6sv313+nEt3ohWMBQ==}
@@ -1630,7 +1630,6 @@ packages:
 
   /csstype/3.1.0:
     resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
-    dev: false
 
   /dargs/7.0.0:
     resolution: {integrity: sha512-2iy1EkLdlBzQGvbweYRFxmFath8+K7+AKB0TlhHWkNuH+TmovaMH/Wp7V7R4u7f4SnX3OgLsU9t1NI9ioDnUpg==}
@@ -2531,11 +2530,16 @@ packages:
       function-bind: 1.1.1
     dev: true
 
+  /history/5.3.0:
+    resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
+    dependencies:
+      '@babel/runtime': 7.18.9
+    dev: false
+
   /hoist-non-react-statics/3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
     dependencies:
       react-is: 16.13.1
-    dev: false
 
   /hosted-git-info/2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
@@ -3375,6 +3379,27 @@ packages:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /react-router-dom/6.3.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-uaJj7LKytRxZNQV8+RbzJWnJ8K2nPsOOEuX7aQstlMZKQT0164C+X2w6bnkqU3sjtLvpd5ojrezAyfZ1+0sStw==}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      history: 5.3.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-router: 6.3.0_react@18.2.0
+    dev: false
+
+  /react-router/6.3.0_react@18.2.0:
+    resolution: {integrity: sha512-7Wh1DzVQ+tlFjkeo+ujvjSqSJmkt1+8JO+T5xklPlgrh70y7ogx75ODRW0ThWhY7S+6yEDks8TYrtQe/aoboBQ==}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      history: 5.3.0
+      react: 18.2.0
+    dev: false
 
   /react-transition-group/4.4.5_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}

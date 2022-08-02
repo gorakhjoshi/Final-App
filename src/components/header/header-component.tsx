@@ -1,16 +1,21 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Header = () => {
   return (
     <S.HeaderElement>
       <S.HeaderItems>
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
+        <NavItem to="home">Home</NavItem>
+        <NavItem to="activity">Activity</NavItem>
+        <NavItem to="services">Services</NavItem>
       </S.HeaderItems>
     </S.HeaderElement>
   );
 };
+
+function NavItem({ to, children }: any) {
+  return <NavLink to={to}>{children}</NavLink>;
+}
 
 const S = {
   HeaderElement: styled.div`
