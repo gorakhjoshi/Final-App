@@ -1,12 +1,9 @@
-import { generateData, generateStudents } from "shared/helpers/data-generation";
-import { generateRange } from "shared/helpers/math.utils";
-
-console.log(generateData(10));
-
-console.log(generateRange(5));
-
-console.log(generateStudents());
+import { Header } from "components/header/header-component";
 
 export default function App() {
-  return <div className="App">hello world</div>;
+  return (
+    <div className="App">
+      <Header />
+    </div>
+  );
 }
