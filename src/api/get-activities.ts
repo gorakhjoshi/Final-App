@@ -1,4 +1,4 @@
-import { httpMock } from "shared/helpers/http-mocks";
+import { httpMock } from "shared/helpers/http-mock";
 
 export async function getActivities() {
   await httpMock({ randomFailure: true });

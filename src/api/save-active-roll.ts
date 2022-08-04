@@ -1,6 +1,6 @@
-import { httpMock } from "shared/helpers/http-mocks";
+import { httpMock } from "shared/helpers/http-mock";
 
-export async function saveActivity() {
+export async function saveActiveRoll() {
   try {
     await httpMock({ randomFailure: true });
     return {
