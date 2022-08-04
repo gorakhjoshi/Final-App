@@ -1,28 +1,48 @@
+import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { Colors } from "shared/styles/colors";
+import { FontWeight } from "shared/styles/styles";
 
-export const Header = () => {
+export const Header: React.FC = () => {
   return (
-    <S.HeaderElement>
+    <S.Header>
       <S.HeaderItems>
+        <NavItem to="/">Front</NavItem>
         <NavItem to="home">Home</NavItem>
         <NavItem to="activity">Activity</NavItem>
-        <NavItem to="services">Services</NavItem>
       </S.HeaderItems>
-    </S.HeaderElement>
+    </S.Header>
   );
 };
 
-function NavItem({ to, children }: any) {
-  return <NavLink to={to}>{children}</NavLink>;
-}
+const NavItem: React.FC<{ to: string; children: React.ReactNode }> = (
+  props
+) => {
+  const activeStyle = ({ isActive }: { isActive: boolean }) => ({
+    textDecoration: "none",
+    fontWeight: FontWeight.strong,
+    color: "#fff",
+    padding: "18px 20px 17px",
+    backgroundColor: isActive ? "#1b4f90" : Colors.blue.base,
+  });
+  return (
+    <NavLink to={props.to} style={activeStyle}>
+      {props.children}
+    </NavLink>
+  );
+};
 
 const S = {
-  HeaderElement: styled.div`
+  Header: styled.header`
     display: flex;
-    justify-content: center;
+    align-items: center;
+    height: 56px;
+    background-color: ${Colors.blue.base};
+    color: #fff;
   `,
-  HeaderItems: styled.div`
-    color: red;
+  HeaderItems: styled.nav`
+    display: flex;
+    height: 100%;
   `,
 };

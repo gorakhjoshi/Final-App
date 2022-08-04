@@ -6,6 +6,7 @@ interface Options {
   url: Endpoint;
   initialLoadState?: LoadState;
 }
+
 export function useApi<ReturnType = Record<string, unknown>>({
   url,
   initialLoadState = "loading",
