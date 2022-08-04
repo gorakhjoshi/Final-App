@@ -1,17 +1,18 @@
-import { getRandom } from "./math.utils";
+import { getRandomInt } from "shared/helpers/math-utils";
+
 interface Options {
   success?: boolean;
-  randomFailure: boolean;
+  randomFailure?: boolean;
 }
-
-export function httpMocks({ success, randomFailure }: Options) {
+export function httpMock({ success, randomFailure }: Options) {
   return new Promise<void>((resolve, reject) => {
+    // resolves randomly between 200ms to 1000ms
     setTimeout(() => {
-      if (randomFailure && Math.random() < 0.99 && success) {
+      if ((randomFailure && Math.random() < 0.99) || success) {
         resolve();
       } else {
         reject({ message: "Failed" });
       }
-    }, getRandom(10, 20) * 100);
+    }, getRandomInt(2, 10) * 100);
   });
 }
